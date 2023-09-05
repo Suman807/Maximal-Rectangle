@@ -111,24 +111,15 @@ void rec(vector<vector<char>> &nums,int &ans){
     
 }
 
-
-
-
 int main(){
     vector<vector<char>> nums = {{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}};
-    // vector<vector<char>> nums = {{'0','1'},{'1','0'}};
     int ans=0;
-    
-    // rec(nums,ans);
-
-    // cout<<ans<<endl;
-    //vector<int> v = {1,2,5,5};
-    // vector<int> v (99999999,5);
     
     auto startTime = high_resolution_clock::now();
     rec(nums,ans);
     auto endTime = high_resolution_clock::now();
     auto duration = duration_cast<seconds>(endTime-startTime);
+    
     cout<<"sec : "<<duration.count()<<endl;
     cout<<ans<<endl;
     
