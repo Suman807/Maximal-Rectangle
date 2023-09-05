@@ -75,25 +75,6 @@ void histogram_stack(vector<int> &v, int &maxLen){
     
 }
 
-void rec(vector<vector<char>> &nums,int &ans){
-    vector<int> v(nums[0].size(),0);
-    int maxLen = 0;
-    
-    for (size_t i = 0; i < nums.size(); i++)
-    {
-        for (size_t j = 0; j < nums[0].size();j++)
-        {
-            if (nums[i][j] == '1') v[j]++;
-            else v[j] = 0;
-        }
-        histogram_bruteforce(v,maxLen);
-    
-    }
-    ans = maxLen;
-    
-}
-
-
 void histogram_stack2(vector<int> &v,int &maxLen){
     stack<int> st;
     int rs=0,h=0;
@@ -112,6 +93,27 @@ void histogram_stack2(vector<int> &v,int &maxLen){
     
 }
 
+void rec(vector<vector<char>> &nums,int &ans){
+    vector<int> v(nums[0].size(),0);
+    int maxLen = 0;
+    
+    for (size_t i = 0; i < nums.size(); i++)
+    {
+        for (size_t j = 0; j < nums[0].size();j++)
+        {
+            if (nums[i][j] == '1') v[j]++;
+            else v[j] = 0;
+        }
+        histogram_stack2(v,maxLen);
+    
+    }
+    ans = maxLen;
+    
+}
+
+
+
+
 int main(){
     vector<vector<char>> nums = {{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}};
     // vector<vector<char>> nums = {{'0','1'},{'1','0'}};
@@ -120,11 +122,11 @@ int main(){
     // rec(nums,ans);
 
     // cout<<ans<<endl;
-    vector<int> v = {1,2,5,5};
+    //vector<int> v = {1,2,5,5};
     // vector<int> v (99999999,5);
     
     auto startTime = high_resolution_clock::now();
-    histogram_stack2(v,ans);
+    rec(nums,ans);
     auto endTime = high_resolution_clock::now();
     auto duration = duration_cast<seconds>(endTime-startTime);
     cout<<"sec : "<<duration.count()<<endl;
