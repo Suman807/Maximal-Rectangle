@@ -77,7 +77,7 @@ void histogram_stack(vector<int> &v, int &maxLen){
     
 }
 
-//stack  2 approaches
+//stack  2 approaches to remmember
 void histogram_stack2(vector<int> &v,int &maxLen){
     stack<int> st;
     int rs=0,h=0;
