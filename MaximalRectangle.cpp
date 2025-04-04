@@ -35,7 +35,7 @@ void histogram_bruteforce(vector<int> &v, int &maxLen){
 }
 
 
-//stack approach
+//stack approach to remember
 void histogram_stack(vector<int> &v, int &maxLen){
     stack<int> st;
     vector<int> left(v.size(),0);
