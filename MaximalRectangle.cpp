@@ -34,6 +34,11 @@ void histogram_bruteforce(vector<int> &v, int &maxLen){
     
 }
 
+<<<<<<< HEAD
+//stack approach
+=======
+//stack approaches
+>>>>>>> 0f9ae8adc0b378a8d90c92ba5a44df0fe2c26a05
 void histogram_stack(vector<int> &v, int &maxLen){
     stack<int> st;
     vector<int> left(v.size(),0);
@@ -75,6 +80,7 @@ void histogram_stack(vector<int> &v, int &maxLen){
     
 }
 
+//stack  2 approach
 void histogram_stack2(vector<int> &v,int &maxLen){
     stack<int> st;
     int rs=0,h=0;
